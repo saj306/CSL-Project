@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+.button1 {background-color: #4CAF50;}
+.button2 {background-color: #008CBA;}
+
+.center {
+  position: relative;
+  left: 50%;
+  -ms-transform: translate(-50%);
+  transform: translate(-50%);
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="row">
+  <div class="column">
+    <img src="http://192.168.184.206:8080/video" alt="cam1" style="width: 100%;">
+  </div>
+  <div class="column">
+    <img src="http://192.168.184.117:8080/video" alt="cam2" style="width: 100%;">
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="column">
+    <form action="http://192.168.184.14:5000/activate" method="get">
+      <input type="submit" class="button button1 center" name="cam1" value="Turn ON/OFF">
+    </form>
+  </div>
+  <div class="column">
+    <form action="http://192.168.184.14:5000/activate" method="get">
+      <input type="submit" class="button button2 center" name="cam2" value="Turn ON/OFF">
+    </form>
+  </div>
+</div>
+
+
+</body>
+</html>
